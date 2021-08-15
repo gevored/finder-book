@@ -1,7 +1,8 @@
 
 import styled from 'styled-components'
-import {useState} from 'react'
+import {useContext, useState,} from 'react'
 import axios from 'axios'
+import {ContextGlobal} from '../context/contextGlobal'
 
 const InputSeacr = styled.input`
     width: 50%;
@@ -21,44 +22,33 @@ const InputSeacr = styled.input`
       margin-left:0;
     }
 `
-
 export function Seacrh(){
 
-  const [inputField , setInputField] = useState('')
-  const [arrayBooks, setArrayBooks] = useState ([])
+  const {listBooks, setListBooks} = useContext(ContextGlobal)
 
+  const [inputField , setInputField] = useState('')
 
   async function handleInputValueSearch(key){
 
     if(key === 'Enter'){
-
      //alert(`testando:${inputField}`)
-
+      console.log('teste')
       const request = await axios({
         method: 'get',
         url: `https://www.googleapis.com/books/v1/volumes?q=${inputField}&key=AIzaSyBTotKddrqB5Uu20gWAR96-FOV7Vpr-AWI`,
        
       })
-       
-      console.log(request.data.items, request.data)
-
+      setListBooks(request.data.items)
     }
-    
   } 
 
     return(
-      <>
         <InputSeacr 
         placeholder = 'Autor, nome do livro e etc...' 
         value= {inputField}
         onChange =  {(e) => {setInputField(e.target.value)}}
         list = "cars"
         onKeyDown = {(e) =>{handleInputValueSearch(e.key )}}
-        >
-          
-        </InputSeacr>
-
-      
-      </>
+        />
     )
 }

@@ -1,7 +1,12 @@
 import  {MenuComponente} from  './components/MenuComponent'
+import GlobalProvider from './context/contextGlobal'
+import {ListBook} from './components/ListBook'
 
-export function  App (){
+export function  App(){
     return (
-        <MenuComponente/>
+        <GlobalProvider >
+            <MenuComponente/>
+            <ListBook/>
+        </GlobalProvider>
     )
 }
