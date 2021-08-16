@@ -5,11 +5,6 @@ import axios from 'axios'
 import {ContextGlobal} from '../context/contextGlobal'
 
 
-const DivSearch = styled.div`
-
-  width: 100%;
-
-`
 
 const InputSeacr = styled.input`
     width: 50%;
@@ -50,7 +45,7 @@ export function Seacrh(){
   } 
 
     return(
-      <DivSearch>
+      
           <InputSeacr 
           placeholder = 'Autor, nome do livro e etc...' 
           value= {inputField}
@@ -58,6 +53,6 @@ export function Seacrh(){
           list = "cars"
           onKeyDown = {(e) =>{handleInputValueSearch(e.key )}}
           />
-      </DivSearch>
+    
     )
 }

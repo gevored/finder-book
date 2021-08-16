@@ -27,10 +27,11 @@
     export function MenuComponente(){
         return (
             <Div>
+                <h1>Finder Book</h1>
                 <div>
-                    <h1>Finder Book</h1>
+                                      
+                    <Seacrh/>
                 </div>
-                <Seacrh/>
             </Div>
         )
     }
