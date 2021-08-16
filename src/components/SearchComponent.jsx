@@ -4,6 +4,13 @@ import {useContext, useState,} from 'react'
 import axios from 'axios'
 import {ContextGlobal} from '../context/contextGlobal'
 
+
+const DivSearch = styled.div`
+
+  width: 100%;
+
+`
+
 const InputSeacr = styled.input`
     width: 50%;
     height: 40px;
@@ -43,12 +50,14 @@ export function Seacrh(){
   } 
 
     return(
-        <InputSeacr 
-        placeholder = 'Autor, nome do livro e etc...' 
-        value= {inputField}
-        onChange =  {(e) => {setInputField(e.target.value)}}
-        list = "cars"
-        onKeyDown = {(e) =>{handleInputValueSearch(e.key )}}
-        />
+      <DivSearch>
+          <InputSeacr 
+          placeholder = 'Autor, nome do livro e etc...' 
+          value= {inputField}
+          onChange =  {(e) => {setInputField(e.target.value)}}
+          list = "cars"
+          onKeyDown = {(e) =>{handleInputValueSearch(e.key )}}
+          />
+      </DivSearch>
     )
 }

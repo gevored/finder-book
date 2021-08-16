@@ -6,16 +6,31 @@
     const Div = styled.div`
       width: 100%;
       display: flex;
-      justify-content: center;
-      margin-top:200px;
+      flex-direction:column;
+
+      h1{
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        align-conten:center;
+        font-size: 100px;
+      }
+
+      div{
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-conten:center;
+      }
     `;
 
     export function MenuComponente(){
         return (
-
             <Div>
+                <div>
+                    <h1>Finder Book</h1>
+                </div>
                 <Seacrh/>
             </Div>
         )
-
     }
